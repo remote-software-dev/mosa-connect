@@ -61,7 +61,7 @@
                         Mosa Connect
                     </h1>
                     <div class="text-large font-weight-light">
-                        Database Alumni Modal Bangsa<br /> Project Implementation<br /> Management Information System (MIS)
+                        Database Alumni Modal Bangsa<br /> Alumni Network<br /> Management Information System (MIS)
                     </div>
                 </div>
                 <!-- /.Text -->

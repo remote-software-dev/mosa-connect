@@ -6,8 +6,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('redirect/{driver}', 'Auth\LoginController@redirectToGoogleProvider')->name('login.provider');
-Route::get('{driver}/callback', 'Auth\LoginController@handleGoogleProviderCallback')->name('login.callback');
+Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
+Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.callback');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
