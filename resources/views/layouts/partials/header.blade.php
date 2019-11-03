@@ -85,7 +85,7 @@
                                 <span class="caret"></span>
                                 <ul class="dropdown-menu" style="background-color:#1DA1F2;">
                                     <li> 
-                                        <a class="dropdown-item" href="">
+                                        <a class="dropdown-item" href="{{route('/profile')}}">
                                             <span>
                                                 <i class="fa fa-star" style="font-size:16px" aria-hidden="true"></i>
                                             </span>
