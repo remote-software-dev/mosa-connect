@@ -5,27 +5,26 @@
         <div class="container">
             <div class="main-section-data">
                 <div class="row">
-                    
+
                     <div class="col-lg-9 col-md-8 no-pd">
                         <div class="main-ws-sec">
                             <div class="post-topbar">
-
+                                <h3>https://codepen.io/siremilomir/pen/jBbQGo</h3>
                                 <div class="posts-section">
                                     <div class="post-bar" style="border:none;">
                                         <div class="post_topbar">
                                             <div class="usy-dt">
-                                                <img src="{{auth()->user()->avatar}}" alt="">
+                                                <img src="{{asset('mosaconnect/images/default.jpg')}}" alt="" width=120 height=140>
                                                 <div class="usy-name">
                                                     <h3>{{Auth::user()->name}}</h3>
                                                     <span><img src="{{asset('mosaconnect/images/clock.png')}}" alt="">3 min ago</span>
                                                 </div>
                                             </div>
                                             <div class="ed-opts">
-                                                <a href="#">Edit</a>
-
+                                                <a href="#">Edit<i class="fa fa-pencil fa-fw"></i> </a>
                                             </div>
                                         </div>
-                                      
+
                                         <div class="job_descp">
                                             <ul>
                                                 <div class="table-responsive">

@@ -4,7 +4,7 @@ Route::get('/', function () {
     return view('home');
 })->middleware('auth');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
 Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.callback');

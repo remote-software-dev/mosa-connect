@@ -12,7 +12,7 @@
 								<div class="user-profile">
 									<div class="username-dt">
 										<div class="usr-pic">
-											<img src="{{auth()->user()->avatar}}" alt="">
+										<img src="{{asset('mosaconnect/images/default.jpg')}}" alt="">                           
 										</div>
 									</div><!--username-dt end-->
 									<div class="user-specs">
@@ -128,7 +128,7 @@
 										<div class="post-bar">
 											<div class="post_topbar">
 												<div class="usy-dt">
-													<img src="{{auth()->user()->avatar}}" alt="">
+													<img width=100 height=100 src="{{auth()->user()->avatar}}" alt="">
 													<div class="usy-name">
 														<h3>{{Auth::user()->name}}</h3>
 														<span><img src="{{asset('mosaconnect/images/clock.png')}}" alt="">3 min ago</span>
