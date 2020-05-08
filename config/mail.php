@@ -2,9 +2,9 @@
 
 return [
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
-    'port' => env('MAIL_PORT', 587),
+    'driver' => env('MAIL_DRIVER'),
+    'host' => env('MAIL_HOST'),
+    'port' => env('MAIL_PORT'),
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'administrator@mosaconnect.org'),
         'name' => env('MAIL_FROM_NAME', 'MosaConnect Administrator'),

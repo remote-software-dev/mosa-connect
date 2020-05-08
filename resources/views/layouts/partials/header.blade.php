@@ -25,7 +25,7 @@
                     </li>
 
                     <li>
-                        <a href="#" title="">
+                        <a href="{{route('/komunitas')}}" title="">
                             <span>
                                 <i class="fa fa-life-ring" style="font-size:16px" aria-hidden="true"></i>
                             </span>
@@ -66,12 +66,16 @@
             <div class="user-account">
                 <div class="user-info">
                     <ul>
-                        <li>
-                            <img src="{{asset('mosaconnect/images/default.jpg')}}" alt="" width="30" height="32" style="vertical-align: middle; margin-right: 8px;">
+                            <li>
+                            @if(Auth::user()->profile()->exists())
+                            <img src="{{Auth::user()->profile->pic}}" width="30" height="36" style="vertical-align: middle; margin-right: 8px;">
+                            @else
+                            <img src="{{asset('mosaconnect/images/default.jpg')}}" width="30" height="32" style="vertical-align: middle; margin-right: 8px;">
+                            @endif
                         </li>
                         <li>
-                            <div class="dropdown">                           
-                            <a class="dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <?php
                                     $arr1 = explode(' ', trim(Auth::user()->name));
                                     echo $arr1[0]; ?>

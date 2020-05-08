@@ -9,19 +9,29 @@
                     <div class="col-lg-9 col-md-8 no-pd">
                         <div class="main-ws-sec">
                             <div class="post-topbar">
-                                <h3>https://codepen.io/siremilomir/pen/jBbQGo</h3>
                                 <div class="posts-section">
                                     <div class="post-bar" style="border:none;">
                                         <div class="post_topbar">
                                             <div class="usy-dt">
-                                                <img src="{{asset('mosaconnect/images/default.jpg')}}" alt="" width=120 height=140>
+                                                @if(Auth::user()->profile()->exists())
+                                                <img src="{{Auth::user()->profile->pic}}" alt="" width=120 height=140>
+                                                @else
+                                                <img src="{{asset('mosaconnect/images/default.jpg')}}" width=120 height=140 alt="">
+                                                @endif
                                                 <div class="usy-name">
-                                                    <h3>{{Auth::user()->name}}</h3>
+                                                    <h3>{{Auth::user()->username}}</h3>
                                                     <span><img src="{{asset('mosaconnect/images/clock.png')}}" alt="">3 min ago</span>
                                                 </div>
                                             </div>
+
                                             <div class="ed-opts">
-                                                <a href="#">Edit<i class="fa fa-pencil fa-fw"></i> </a>
+                                                <!-- if first time login then do create profile -->
+                                                @if(Auth::user()->profile()->exists())
+                                                <a href="{{route('/profile-edit')}}">Edit Profil<i class="fa fa-pencil fa-fw"></i> </a>
+                                                <!-- else if returning login, then edit profile -->
+                                                @else
+                                                <a href="{{route('/profile-create')}}">Buat Profil<i class="fa fa-pencil fa-fw"></i> </a>
+                                                @endif
                                             </div>
                                         </div>
 
@@ -32,21 +42,30 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td>Nama</td>
-                                                                <td>Yadda</td>
+                                                                @if(Auth::user()->profile()->exists())
+                                                                <td>{{Auth::user()->profile->name}}</td>
+                                                                @else
+                                                                <td>Silakan isi nama anda</td>
+                                                                @endif
                                                             </tr>
 
                                                             <tr>
-                                                                <td>Tempat/Tanggal Lahir</td>
-                                                                <td>15/10/1978</td>
+                                                                <td>Tanggal Lahir</td>
+                                                                @if(Auth::user()->profile()->exists())                                        
+                                                                <td>{{date('d/m/Y', strtotime(Auth::user()->profile->dob))}}</td>
+                                                                @else
+                                                                <td>Silakan isi nama anda</td>
+                                                                @endif
                                                             </tr>
-
-
 
                                                             <tr>
                                                                 <td>Pekerjaan</td>
-                                                                <td>Programmer</td>
+                                                                @if(Auth::user()->profile()->exists())
+                                                                <td>{{Auth::user()->profile->occupation}}</td>
+                                                                @else
+                                                                <td>Silakan isi nama anda</td>
+                                                                @endif
                                                             </tr>
-
                                                         </tbody>
                                                     </table>
 

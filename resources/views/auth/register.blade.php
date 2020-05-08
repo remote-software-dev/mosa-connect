@@ -3,11 +3,12 @@
 <form class="my-5" method="POST" action="{{ route('register') }}">
     @csrf
     <div class="form-group">
-        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Nama Lengkap" required autofocus>
+        <input id="name" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" 
+        name="username" value="{{ old('username') }}" placeholder="Username" required autofocus>
 
-        @if ($errors->has('name'))
+        @if ($errors->has('username'))
         <span class="invalid-feedback" role="alert">
-            <strong>{{ $errors->first('name') }}</strong>
+            <strong>{{ $errors->first('username') }}</strong>
         </span>
         @endif
     </div>
